@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навигационная панель</title>
+    <!-- Подключение премиального шрифта Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Новая палитра: глубокий космос, аметист и неоновые акценты */
+        :root {
+            --bg-color: #06050b; /* Обсидиановый черный */
+            --tile-bg: rgba(255, 255, 255, 0.02); /* Полупрозрачное стекло */
+            --tile-border: rgba(255, 255, 255, 0.07);
+            --tile-border-hover: rgba(168, 85, 247, 0.4); /* Неоновый фиолетовый */
+            --accent-glow: rgba(139, 92, 246, 0.15);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            /* Мягкие космические туманности на фоне */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 40%),
+                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.1) 0px, transparent 40%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #f8fafc 30%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Плотно сбитая сетка плиток с минимальными отступами */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem; /* Минимальное расстояние между плитками */
+            width: 100%;
+        }
+
+        /* Тонкие, элегантные плитки */
+        .tile {
+            background-color: var(--tile-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--tile-border);
+            border-radius: 12px; /* Мягкие, но более строгие углы */
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 115px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                        border-color 0.2s ease, 
+                        background-color 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        /* Горизонтальный блок иконки и заголовка */
+        .tile-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Иконки стали аккуратнее и компактнее */
+        .icon-wrapper {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a855f7;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .icon-wrapper svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .tile h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .tile p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Стрелочка перехода в углу */
+        .tile-arrow {
+            position: absolute;
+            bottom: 1.25rem;
+            right: 1.25rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.2);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        /* Эффекты наведения */
+        @media (hover: hover) {
+            .tile:hover {
+                background-color: rgba(255, 255, 255, 0.04);
+                border-color: var(--tile-border-hover);
+                box-shadow: 0 10px 20px -10px var(--accent-glow);
+            }
+            .tile:hover .icon-wrapper {
+                color: #c084fc;
+                transform: scale(1.05);
+            }
+            .tile:hover .tile-arrow {
+                color: #a855f7;
+                transform: translateX(3px);
+            }
+        }
+
+        /* Энергичная микро-анимация клика */
+        .tile:active {
+            transform: scale(0.97);
+            border-color: #c084fc;
+            background-color: rgba(168, 85, 247, 0.05);
+        }
+
+        /* Фиксация сжатия перед переходом */
+        .tile.clicked {
+            transform: scale(0.95);
+            opacity: 0.8;
+            transition: transform 0.1s ease, opacity 0.1s ease;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* Адаптивность для планшетов */
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.85rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Адаптивность для ПК */
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+                gap: 0.9rem;
+            }
+            /* Сделаем так, чтобы последний (7-й) элемент красиво смотрелся или сетка была сбалансированной */
+            .tile {
+                min-height: 125px;
+                padding: 1.5rem;
+            }
+            header h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Навигационная панель</h1>
+            <p>Выберите интересующий раздел для перехода к соответствующим материалам</p>
+        </header>
+
+        <main class="grid">
+            
+            <!-- 1. Консалтинг и решения -->
+            <div class="tile" data-url="https://www.1c-prombez.ru/konsalting">
+                <div class="tile-header">
+                    <div class="icon-wrapper">
+                        <!-- Иконка: Кейс / Консалтинг -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Консалтинг и решения</h3>
+                </div>
+                <p>Профессиональный аудит и экспертные заключения по безопасности.</p>
+                <div class="tile-arrow">→</div>
+            </div>
+
+            <!-- 2. Продукты -->
+            <div class="tile" data-url="https://www.1c-prombez.ru/prod">
+                <div class="tile-header">
+                    <div class="icon-wrapper">
+                        <!-- Иконка: Куб / Продукты -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Продукты</h3>
+                </div>
+                <p>Программные решения и готовые инструменты для вашего бизнеса.</p>
+                <div class="tile-arrow">→</div>
+            </div>
+
+            <!-- 3. Обучение -->
+            <div class="tile" data-url="https://www.1c-prombez.ru/courses">
+                <div class="tile-header">
+                    <div class="icon-wrapper">
+                        <!-- Иконка: Академическая шапка / Обучение -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                        </svg>
+                    </div>
+                    <h3>Обучение</h3>
+                </div>
+                <p>Программы подготовки специалистов и аттестационные курсы.</p>
+                <div class="tile-arrow">→</div>
+            </div>
+
+            <!-- 4. Истории успеха -->
+            <div class="tile" data-url="https://www.1c-prombez.ru/history">
+                <div class="tile-header">
+                    <div class="icon-wrapper">
+                        <!-- Иконка: Кубок / Истории успеха -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v3c0 2.44 1.72 4.48 4 4.88v2.12c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-2.12c2.28-.4 4-2.44 4-4.88V7c0-1.1-.9-2-2-2zM5 10V7h2v3H5zm14 0h-2V7h2v3z"/>
+                        </svg>
+                    </div>
+                    <h3>Истории успеха</h3>
+                </div>
+                <p>Кейсы внедрения и отзывы наших партнеров по всей стране.</p>
+                <div class="tile-arrow">→</div>
+            </div>
+
+            <!-- 5. Цифровые технологии -->
+            <div class="tile" data-url="https://www.1c-prombez.ru/dt">
+                <div class="tile-header">
+                    <div class="icon-wrapper">
+                        <!-- Иконка: Процессор / Цифровые технологии -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15 9H9v6h6V9zm-2 4h-2v-2h2v2zm8-2V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10z"/>
+                        </svg>
+                    </div>
+                    <h3>Цифровые технологии</h3>
+                </div>
+                <p>Инновационные IT-инструменты для контроля безопасности.</p>
+                <div class="tile-arrow">→</div>
+            </div>
+
+            <!-- 6. О компании -->
+            <div class="tile" data-url="https://www.1c-prombez.ru/company">
+                <div class="tile-header">
+                    <div class="icon-wrapper">
+                        <!-- Иконка: Информация / О компании -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <h3>О компании</h3>
+                </div>
+                <p>Наша миссия, ценности и команда сертифицированных экспертов.</p>
+                <div class="tile-arrow">→</div>
+            </div>
+
+            <!-- 7. Блог -->
+            <div class="tile" data-url="https://www.1c-prombez.ru/blog">
+                <div class="tile-header">
+                    <div class="icon-wrapper">
+                        <!-- Иконка: Документ / Блог -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Блог</h3>
+                </div>
+                <p>Полезные статьи, изменения в законах и обзоры практик.</p>
+                <div class="tile-arrow">→</div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026. Портал промышленной безопасности.</p>
+    </footer>
+
+    <script>
+        const tiles = document.querySelectorAll('.tile');
+
+        tiles.forEach(tile => {
+            tile.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetUrl = this.getAttribute('data-url');
+                
+                // Эффектная анимация проседания плитки
+                this.classList.add('clicked');
+                
+                // Задержка 250 мс, чтобы пользователь уловил микро-отклик
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 250);
+            });
+        });
+    </script>
+</body>
+</html>
