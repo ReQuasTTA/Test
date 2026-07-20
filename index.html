@@ -3,329 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Школьная лига русской лапты — База материалов</title>
+    <title>Школьная лига русской лапты — Памятка</title>
     <!-- Подключение Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f2f7f8; /* Основной цвет фона сайта заказчика */
+            background-color: #f2f7f8;
         }
         .card-transition {
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .click-feedback:active {
+            transform: scale(0.985);
+            transition: transform 0.1s ease;
+        }
+
+        /* Минималистичные благородные цвета без тяжелых градиентов с анимационными хайлайтами */
+        .tile-terracotta { 
+            background-color: #bd5233;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .tile-terracotta:hover { 
+            background-color: #cb5d3d;
+            box-shadow: 0 20px 40px -10px rgba(189, 82, 51, 0.35);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .tile-sage { 
+            background-color: #2b6144;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .tile-sage:hover { 
+            background-color: #337050;
+            box-shadow: 0 20px 40px -10px rgba(43, 97, 68, 0.35);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .tile-indigo { 
+            background-color: #434c6f;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .tile-indigo:hover { 
+            background-color: #4c567d;
+            box-shadow: 0 20px 40px -10px rgba(67, 76, 111, 0.35);
+            border-color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
 <body class="text-[#0f3037] flex flex-col min-h-screen antialiased">
 
-    <!-- Тонкий оранжевый акцент из оригинальной шапки -->
+    <!-- Тонкий акцент оригинальной шапки -->
     <div class="h-1.5 bg-[#b86733]"></div>
 
-    <!-- Шапка сайта (строго заголовок по центру) -->
-    <header class="bg-[#144d58] text-white py-12 shadow-sm text-center">
+    <!-- Шапка сайта -->
+    <header class="bg-[#144d58] text-white py-14 shadow-sm text-center">
         <div class="max-w-6xl mx-auto px-6">
-            <h1 class="text-3xl font-bold tracking-tight">Школьная Лига Лапты</h1>
-            <p class="mt-2 text-slate-300 text-sm md:text-base font-light">Документы, инструкции и поддержка участников</p>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Школьная лига русской лапты</h1>
+            <p class="mt-3 text-slate-300 text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed">
+                Быстрый помощник учителя-организатора: правила, документы, система турниров, обучение, инвентарь и поддержка — в одном месте.
+            </p>
         </div>
     </header>
 
-    <!-- Основная сетка -->
-    <main class="flex-grow max-w-6xl mx-auto px-6 py-12 w-full">
+    <!-- Основной контент -->
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-12 w-full" id="actions">
         
-        <!-- Секция 1: Обучение и правила -->
-        <section class="mb-14">
-            <h2 class="text-xs uppercase tracking-widest font-bold text-[#186372] mb-6 border-b border-[#d2e2e5] pb-3">
-                Правила и обучение
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- 1. Анимационный ролик (Локальное видео) -->
-                <div onclick="playLocalVideo('rulesVideo')" role="button" tabindex="0" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition cursor-pointer">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-[#186372] bg-[#f2f7f8] px-2.5 py-1 rounded-md">Видео</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Анимационный ролик</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Быстрое знакомство с основными правилами игры в русскую лапту на интерактивной схеме.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Смотреть на сайте</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </div>
-
-                <!-- 2. Методическое пособие (Документ PDF) -->
-                <div onclick="viewLocalDoc('methodologyOpen', 'methodologyDownload', 'Методическое пособие «Русская лапта в школе»')" role="button" tabindex="0" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition cursor-pointer">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-[#186372] bg-[#f2f7f8] px-2.5 py-1 rounded-md">Документ</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Методическое пособие</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Пособие «Русская лапта в школе» с рекомендациями по проведению уроков физической культуры.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Открыть пособие</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </div>
-
-                <!-- 6. Запись семинара (Локальное видео) -->
-                <div onclick="playLocalVideo('seminarVideo')" role="button" tabindex="0" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition cursor-pointer">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-[#186372] bg-[#f2f7f8] px-2.5 py-1 rounded-md">Семинар</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Запись семинара</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Тема вебинара: «Организация школьной лиги». Разбор ключевых шагов внедрения.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Смотреть семинар</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </div>
-
-                <!-- 5. Повышение квалификации (Внешняя ссылка) -->
-                <a id="training-link" href="#" target="_blank" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#b86733]/50 hover:shadow-md hover:-translate-y-1 card-transition">
-                    <div>
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="text-[10px] uppercase font-bold tracking-wider text-[#b86733] bg-[#b86733]/10 px-2.5 py-1 rounded-md">Курсы</span>
-                            <span class="text-xs font-bold text-[#b86733]">990 ₽</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#b86733] transition-colors mb-2">Повышение квалификации</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Официальная программа подготовки. Промокод на скидку: <strong class="text-[#b86733] font-mono">PROMO990</strong>.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#b86733] flex items-center gap-1">
-                        <span>Подробнее о курсе</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </a>
-
+        <!-- Легенда -->
+        <div class="flex flex-wrap justify-center gap-y-3 gap-x-6 text-[11px] md:text-xs font-semibold text-slate-500 mb-12 max-w-3xl mx-auto border border-slate-200/60 bg-white/50 backdrop-blur-sm px-6 py-4 rounded-3xl shadow-sm select-none">
+            <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded-full" style="background-color: #bd5233;"></span>
+                <span>Правила и обучение</span>
             </div>
-        </section>
-
-        <!-- Секция 2: Работа в системе ЛЛ -->
-        <section class="mb-14">
-            <h2 class="text-xs uppercase tracking-widest font-bold text-[#186372] mb-6 border-b border-[#d2e2e5] pb-3">
-                Проведение турниров и регламенты
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- 4. Подключение к личному кабинету (Внешняя ссылка, перенесена в карточки) -->
-                <a id="lk-link-card" href="#" target="_blank" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-[#186372] bg-[#f2f7f8] px-2.5 py-1 rounded-md">Платформа</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Личный кабинет ЛЛ</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Вход в цифровую систему Лиги Лапты для ведения статистики, турнирных таблиц и результатов соревнований.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Перейти в кабинет</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </a>
-
-                <!-- 8. Видео-инструкция по ЛЛ (Локальное видео) -->
-                <div onclick="playLocalVideo('tournamentVideoInst')" role="button" tabindex="0" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition cursor-pointer">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-[#186372] bg-[#f2f7f8] px-2.5 py-1 rounded-md">Инструкция</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Как вести турнир в системе</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Пошаговая video-инструкция: от заполнения карточки матча до подведения итогов лиги.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Смотреть инструкцию</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </div>
-
-                <!-- 3. Пример «Положение школьной лиги» (Просмотр PDF + СКАЧИВАНИЕ WORD/PDF ВНУТРИ) -->
-                <div onclick="viewLocalDoc('rulesOpen', 'rulesDownload', 'Просмотр шаблона Положения школьной лиги')" role="button" tabindex="0" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition cursor-pointer">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-[#186372] bg-[#f2f7f8] px-2.5 py-1 rounded-md">Положение</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Просмотреть Положение</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Просмотр Положения на сайте. Кнопка скачивания исходника доступна внутри формы просмотра.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Просмотреть документ</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </div>
-
-                <!-- 9. Запросить права в ЛЛ (Почтовое письмо) -->
-                <a id="rights-email" href="#" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-red-500/50 hover:shadow-md hover:-translate-y-1 card-transition">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-bold tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-md">Доступ</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-red-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors mb-2">Заявка на ведение турнира</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Автоматическое формирование письма-заявки кураторам на получение прав ведения турнира.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-red-600 flex items-center gap-1">
-                        <span>Создать письмо-заявку</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </a>
-
+            <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded-full" style="background-color: #2b6144;"></span>
+                <span>Турниры и регламенты</span>
             </div>
-        </section>
-
-        <!-- Секция 3: Инвентарь и обратная связь -->
-        <section class="mb-14">
-            <h2 class="text-xs uppercase tracking-widest font-bold text-[#186372] mb-6 border-b border-[#d2e2e5] pb-3">
-                Инвентарь и контакты
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- 7. Заказать инвентарь (Форма внутри модалки) -->
-                <div onclick="openYandexForm()" role="button" tabindex="0" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#b86733]/50 hover:shadow-md hover:-translate-y-1 card-transition cursor-pointer">
-                    <div>
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="text-[10px] uppercase font-bold tracking-wider text-[#b86733] bg-[#b86733]/10 px-2.5 py-1 rounded-md">Заказ</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#b86733] transition-colors mb-2">Заказать инвентарь</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Заявка из расчета: 3 биты и 10 мячей на 1 школу. Требуются ФИО, адрес, телефон и кол-во школ.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#b86733] flex items-center gap-1">
-                        <span>Открыть анкету заказа</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </div>
-
-                <!-- 11. Перейти в группу общую Макс (Внешняя ссылка на МАКС) -->
-                <a id="chat-link" href="#" target="_blank" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-[#186372] bg-[#f2f7f8] px-2.5 py-1 rounded-md">Чат сообщества</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Общая группа в MAX</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Информационная рабочая группа в мессенджере MAX для оперативных объявлений и консультаций.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Присоединиться к группе</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </a>
-
-                <!-- 12. Задать вопрос куратору (Информационный попап) -->
-                <div onclick="openModal('curatorModal')" role="button" tabindex="0" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition cursor-pointer">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">Куратор</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-1">Задать вопрос куратору</h3>
-                        <p class="text-xs text-[#186372] font-semibold mb-2">Александр Чебан</p>
-                        <p class="text-slate-500 text-xs leading-relaxed">По всем вопросам организации лиги, ведению сетки и регламенту соревнований в MAX.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Показать контакты</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </div>
-
-                <!-- 13. Вопрос техподдержке ЛЛ (Письмо) -->
-                <a id="support-email" href="#" class="group bg-white rounded-2xl border border-[#d2e2e5] p-6 flex flex-col justify-between shadow-sm hover:border-[#186372] hover:shadow-md hover:-translate-y-1 card-transition">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-[10px] uppercase font-semibold tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">Техподдержка</span>
-                            <svg class="w-5 h-5 text-slate-300 group-hover:text-[#186372] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#144d58] transition-colors mb-2">Техподдержка системы ЛЛ</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed">Если возникли ошибки в функционировании личного кабинета, доступов или отображении таблиц.</p>
-                    </div>
-                    <div class="mt-6 text-xs font-semibold text-[#186372] flex items-center gap-1">
-                        <span>Написать на lapta@plrl.ru</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                </a>
-
+            <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded-full" style="background-color: #434c6f;"></span>
+                <span>Инвентарь и контакты</span>
             </div>
-        </section>
+        </div>
 
+        <!-- Контролируемый хаос: асимметричный сбалансированный грид -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- Ряд 1 -->
+            <!-- 01. Обучающее видео [2x1] (Терракота) -->
+            <div onclick="playLocalVideo('rulesVideo')" role="button" tabindex="0" class="group relative p-6 md:col-span-2 lg:col-span-2 rounded-2xl tile-terracotta text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition click-feedback cursor-pointer">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">01</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-orange-200 bg-white/10 px-2.5 py-1 rounded-md">Видео</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Обучающее видео</h3>
+                    <p class="text-slate-200 text-xs leading-relaxed font-light">Анимационный ролик с правилами: короткое и наглядное знакомство с разметкой и логикой игры.</p>
+                </div>
+                <div class="text-xs font-semibold text-orange-200 flex items-center gap-1 mt-4">
+                    <span>Смотреть ролик</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </div>
+
+            <!-- 02. Система ЛЛ [1x1] (Шалфей) -->
+            <a href="https://www.laptist.ru/LigaLapty/ru_RU/" target="_blank" class="group relative p-6 lg:col-span-1 rounded-2xl tile-sage text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">02</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-emerald-200 bg-white/10 px-2.5 py-1 rounded-md">Платформа</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Система «Лига лапты»</h3>
+                </div>
+                <div class="text-xs font-semibold text-emerald-200 flex items-center gap-1 mt-4">
+                    <span>Перейти на портал</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </a>
+
+            <!-- 03. Поддержка [1x1] (Индиго) -->
+            <a id="support-email" href="#" class="group relative p-6 lg:col-span-1 rounded-2xl tile-indigo text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">03</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-blue-200 bg-white/10 px-2.5 py-1 rounded-md">Помощь</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Поддержка ЛЛ</h3>
+                </div>
+                <div class="text-xs font-semibold text-blue-200 flex items-center gap-1 mt-4">
+                    <span>Написать письмо</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </a>
+
+            <!-- Ряд 2 и 3 -->
+            <!-- 04. Личный кабинет [1x1] (Шалфей) -->
+            <a href="https://lk.plrl.ru/" target="_blank" class="group relative p-6 lg:col-span-1 rounded-2xl tile-sage text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">04</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-emerald-200 bg-white/10 px-2.5 py-1 rounded-md">Управление</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Личный кабинет</h3>
+                </div>
+                <div class="text-xs font-semibold text-emerald-200 flex items-center gap-1 mt-4">
+                    <span>Войти в кабинет</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </a>
+
+            <!-- 05. Группа в MAX [1x1] (Индиго) (Перенесен во 2-й ряд для улучшения баланса цветов) -->
+            <a id="chat-link" href="#" target="_blank" class="group relative p-6 lg:col-span-1 rounded-2xl tile-indigo text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">05</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-blue-200 bg-white/10 px-2.5 py-1 rounded-md">Общение</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Группа в MAX</h3>
+                </div>
+                <div class="text-xs font-semibold text-blue-200 flex items-center gap-1 mt-4">
+                    <span>Присоединиться</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </a>
+
+            <!-- 06. Повышение квалификации [1x2 - Вертикально растянутый блок] (Терракота) -->
+            <a id="training-link" href="#" target="_blank" class="group relative p-6 lg:col-span-1 lg:row-span-2 rounded-2xl tile-terracotta text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">06</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 12.001 0 0012 20.055a11.952 12.001 0 00-6.824-2.998 12.078 12.083 0 01.665-6.479L12 14z" /></svg>
+                </div>
+                <div class="flex-grow flex flex-col justify-center my-2">
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-orange-200 bg-white/10 px-2.5 py-1 rounded-md self-start">Обучение</span>
+                    <h3 class="text-lg font-bold mt-4 mb-2 text-white leading-tight">Повышение квалификации</h3>
+                    <p class="text-slate-200 text-xs leading-relaxed font-light mb-4">Официальный онлайн-курс для учителей физкультуры и организаторов.</p>
+                    <div class="bg-black/15 p-3 rounded-xl border border-white/5">
+                        <p class="text-slate-200 text-[11px] leading-relaxed">Освойте методики и получите удостоверение.</p>
+                        <p class="text-orange-200 text-[11px] mt-2 font-semibold">Промокод: <strong class="text-white underline font-bold">PROMO990</strong></p>
+                        <p class="text-white text-xs font-bold mt-0.5">Цена: 990 ₽</p>
+                    </div>
+                </div>
+                <div class="text-xs font-semibold text-orange-200 flex items-center gap-1 mt-auto pt-2">
+                    <span>Пройти курс</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </a>
+
+            <!-- 07. Как завести турнир [1x1] (Шалфей) -->
+            <div onclick="playLocalVideo('tournamentVideoInst')" role="button" tabindex="0" class="group relative p-6 lg:col-span-1 rounded-2xl tile-sage text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition click-feedback cursor-pointer">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">07</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-emerald-200 bg-white/10 px-2.5 py-1 rounded-md">Инструкция</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Как завести турнир</h3>
+                </div>
+                <div class="text-xs font-semibold text-emerald-200 flex items-center gap-1 mt-4">
+                    <span>Смотреть</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </div>
+
+            <!-- 08. Заказать инвентарь [2x1] (Индиго) (Занимает место под 04 и 05) -->
+            <div onclick="openYandexForm()" role="button" tabindex="0" class="group relative p-6 md:col-span-2 lg:col-span-2 rounded-2xl tile-indigo text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition click-feedback cursor-pointer">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">08</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-blue-200 bg-white/10 px-2.5 py-1 rounded-md">Снаряжение</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Заказ инвентаря для школы</h3>
+                    <p class="text-slate-200 text-xs leading-relaxed font-light">Подача заявки на бесплатный комплект: 3 биты и 10 мячей на одно учебное заведение.</p>
+                </div>
+                <div class="text-xs font-semibold text-blue-200 flex items-center gap-1 mt-4">
+                    <span>Заполнить анкету</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </div>
+
+            <!-- 09. Запросить права [1x1] (Шалфей) (Занимает место под 07) -->
+            <a id="rights-email" href="#" class="group relative p-6 lg:col-span-1 rounded-2xl tile-sage text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">09</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-emerald-200 bg-white/10 px-2.5 py-1 rounded-md">Доступ</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Запросить права</h3>
+                </div>
+                <div class="text-xs font-semibold text-emerald-200 flex items-center gap-1 mt-4">
+                    <span>Форма заявки</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </a>
+
+            <!-- Ряд 4 -->
+            <!-- 10. Методическое пособие [2x1] (Терракота) -->
+            <div onclick="viewLocalDoc('methodologyOpen', 'methodologyDownload', 'Методическое пособие «Русская лапта в школе»')" role="button" tabindex="0" class="group relative p-6 md:col-span-2 lg:col-span-2 rounded-2xl tile-terracotta text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition click-feedback cursor-pointer">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">10</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-orange-200 bg-white/10 px-2.5 py-1 rounded-md">Документ</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Методическое пособие «Русская лапта в школе»</h3>
+                    <p class="text-slate-200 text-xs leading-relaxed font-light">Полноценные рекомендации по урокам физкультуры, тренировкам и правилам. Полноценное руководство по организации учебного и тренировочного процесса.</p>
+                </div>
+                <div class="text-xs font-semibold text-orange-200 flex items-center gap-1 mt-4">
+                    <span>Открыть пособие</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </div>
+
+            <!-- 11. Пример Положения [1x1] (Шалфей) -->
+            <div onclick="viewLocalDoc('rulesOpen', 'rulesDownload', 'Просмотр шаблона Положения школьной лиги')" role="button" tabindex="0" class="group relative p-6 lg:col-span-1 rounded-2xl tile-sage text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition click-feedback cursor-pointer">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">11</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-emerald-200 bg-white/10 px-2.5 py-1 rounded-md">Регламент</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Пример Положения</h3>
+                </div>
+                <div class="text-xs font-semibold text-emerald-200 flex items-center gap-1 mt-4">
+                    <span>Открыть регламент</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </div>
+
+            <!-- 12. Семинар организаторов [1x1] (Терракота) (Перенесен в 4-й ряд) -->
+            <div onclick="playLocalVideo('seminarVideo')" role="button" tabindex="0" class="group relative p-6 lg:col-span-1 rounded-2xl tile-terracotta text-white flex flex-col justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition click-feedback cursor-pointer">
+                <div class="flex justify-between items-start w-full select-none mb-4">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono">12</span>
+                    <svg class="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                </div>
+                <div>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-orange-200 bg-white/10 px-2.5 py-1 rounded-md">Семинар</span>
+                    <h3 class="text-lg font-bold mt-3 mb-1 text-white">Семинар организаторов</h3>
+                </div>
+                <div class="text-xs font-semibold text-orange-200 flex items-center gap-1 mt-4">
+                    <span>Смотреть</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
+            </div>
+
+            <!-- Ряд 5 -->
+            <!-- 13. Куратор [4x1] (Индиго) -->
+            <div onclick="openModal('curatorModal')" role="button" tabindex="0" class="group relative p-6 md:col-span-2 lg:col-span-4 rounded-2xl tile-indigo text-white flex flex-col md:flex-row md:items-center justify-between shadow-sm hover:-translate-y-1 hover:scale-[1.01] card-transition click-feedback cursor-pointer mt-2 md:mt-0">
+                <div class="flex items-center gap-6 mb-4 md:mb-0">
+                    <span class="text-3xl font-extralight tracking-tight text-white/30 font-mono hidden md:block">13</span>
+                    <div>
+                        <span class="text-[9px] uppercase font-bold tracking-widest text-blue-200 bg-white/10 px-2.5 py-1 rounded-md">Связь</span>
+                        <h3 class="text-xl font-bold mt-3 mb-1 text-white">Куратор — Александр Чебан</h3>
+                        <p class="text-slate-200 text-sm font-light max-w-xl">Организационные вопросы запуска и проведения школьной лиги. Прямая связь с куратором.</p>
+                    </div>
+                </div>
+                <div class="text-sm font-semibold text-blue-200 flex items-center gap-2 bg-white/10 px-5 py-3 rounded-xl">
+                    <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                    <span>Показать контакты</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300 ml-1">→</span>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <!-- Подвал -->
-    <footer class="bg-[#144d58] text-slate-400 py-8 text-center text-xs border-t border-slate-700/50 mt-auto">
+    <footer class="bg-[#144d58] text-slate-300 py-8 text-center text-xs mt-auto">
         <div class="max-w-6xl mx-auto px-6">
-            <p>© 2026 Профессиональная лига русской лапты.</p>
+            © 2026 Профессиональная лига русской лапты
         </div>
     </footer>
 
     <!-- ================= МОДАЛЬНЫЕ ОКНА ================= -->
-
-    <!-- Модалка 1: Локальный ВИДЕОПЛЕЕР (п. 1, 6, 8) -->
-    <div id="videoModal" class="fixed inset-0 bg-black/85 z-50 hidden items-center justify-center p-4">
-        <div class="bg-black rounded-2xl max-w-4xl w-full relative overflow-hidden aspect-video shadow-2xl flex flex-col">
+    
+    <!-- Модалка 1: Локальный видеоплеер -->
+    <div id="videoModal" class="fixed inset-0 bg-[#144d58]/40 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-black rounded-2xl max-w-4xl w-full relative overflow-hidden aspect-video shadow-2xl flex flex-col border border-white/15">
             <button onclick="closeModal('videoModal')" class="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/80 rounded-full w-9 h-9 flex items-center justify-center font-bold text-lg z-20 transition">✕</button>
             <video id="localVideoPlayer" class="w-full h-full" controls autoplay></video>
         </div>
     </div>
 
-    <!-- Модалка 2: Просмотрщик PDF документов (п. 2, 3) -->
-    <div id="docModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-4xl w-full h-[85vh] relative flex flex-col shadow-2xl overflow-hidden border border-[#d2e2e5]">
-            <!-- Заголовок с универсальной кнопкой СКАЧИВАНИЯ -->
-            <div class="p-5 border-b border-[#d2e2e5] flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#f2f7f8] gap-4">
+    <!-- Модалка 2: Просмотрщик PDF документов -->
+    <div id="docModal" class="fixed inset-0 bg-[#144d58]/40 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-4xl w-full h-[85vh] relative flex flex-col shadow-2xl overflow-hidden border border-[#144d58]/15">
+            <!-- Шапка: легкий и нежный тиловый оттенок хедера с насыщенным фирменным заголовком -->
+            <div class="p-5 border-b border-[#144d58]/10 flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#eef5f6] gap-4">
                 <div>
                     <h3 id="docModalTitle" class="font-bold text-[#144d58] text-base md:text-lg">Просмотр документа</h3>
                 </div>
                 <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
-                    <!-- Универсальная кнопка скачивания: скачивает либо исходник Word, либо PDF (если Word нет) -->
-                    <button onclick="triggerModalDownload()" class="inline-flex items-center gap-1.5 bg-[#b86733] hover:bg-[#9e5223] text-white font-semibold px-4 py-2.5 rounded-xl transition-colors text-xs shadow-sm">
+                    <!-- Кнопка скачивания: акцентный лесной шалфей, мягко выделяющийся на светлом фоне -->
+                    <button onclick="triggerModalDownload()" class="inline-flex items-center gap-1.5 bg-[#2b6144] hover:bg-[#337050] text-white font-semibold px-4 py-2.5 rounded-xl transition-all text-xs border border-emerald-500/10 shadow-md shadow-[#2b6144]/15">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
                         <span>Скачать</span>
                     </button>
-                    <button onclick="closeModal('docModal')" class="text-slate-400 hover:text-slate-600 font-bold text-xl px-2">✕</button>
+                    <button onclick="closeModal('docModal')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 transition-colors">✕</button>
                 </div>
             </div>
-            <!-- Область отображения PDF -->
-            <div class="flex-grow bg-slate-100">
+            <!-- Область PDF -->
+            <div class="flex-grow bg-[#f8fafb]">
                 <iframe id="docIframe" class="w-full h-full border-0" src=""></iframe>
             </div>
         </div>
     </div>
 
-    <!-- Модалка 3: Встроенная Яндекс Форма (п. 7) -->
-    <div id="formModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-lg w-full h-[85vh] relative flex flex-col shadow-2xl overflow-hidden border border-[#d2e2e5]">
-            <div class="p-5 border-b border-[#d2e2e5] flex justify-between items-center bg-[#f2f7f8]">
+    <!-- Модалка 3: Встроенная Яндекс Форма -->
+    <div id="formModal" class="fixed inset-0 bg-[#144d58]/40 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-lg w-full h-[85vh] relative flex flex-col shadow-2xl overflow-hidden border border-[#144d58]/15">
+            <div class="p-5 border-b border-[#144d58]/10 flex justify-between items-center bg-[#eef5f6]">
                 <h3 class="font-bold text-[#144d58] text-lg">Заявка на инвентарь</h3>
-                <button onclick="closeModal('formModal')" class="text-slate-400 hover:text-slate-600 font-bold text-xl">✕</button>
+                <button onclick="closeModal('formModal')" class="text-slate-400 hover:text-slate-700 font-bold text-xl transition-colors">✕</button>
             </div>
-            <div class="flex-grow">
+            <div class="flex-grow bg-[#f8fafb]">
                 <iframe id="formIframe" class="w-full h-full border-0" src="" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
-    <!-- Модалка 4: Попап контактов куратора (п. 12) -->
-    <div id="curatorModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full relative p-6 shadow-2xl border border-[#d2e2e5] text-center">
-            <button onclick="closeModal('curatorModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold text-lg">✕</button>
+    <!-- Модалка 4: Контакты куратора -->
+    <div id="curatorModal" class="fixed inset-0 bg-[#144d58]/40 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full relative p-6 shadow-2xl border border-[#144d58]/15 text-center">
+            <button onclick="closeModal('curatorModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 font-bold text-lg transition-colors">✕</button>
             <div class="w-20 h-20 bg-[#144d58]/10 text-[#144d58] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
             </div>
             <h3 class="text-xl font-bold text-slate-900 mb-1">Александр Чебан</h3>
-            <p class="text-xs text-[#186372] font-semibold mb-6">Куратор Школьной Лиги</p>
+            <p class="text-xs text-[#2b6144] font-semibold mb-6">Куратор Школьной Лиги</p>
             <div class="space-y-3 mb-2">
+                <!-- Кнопки: мягкие светлые тиловые плашки вместо мрачных серых -->
                 <a id="curator-phone-btn" href="#" class="flex items-center justify-between bg-slate-50 hover:bg-slate-100 p-4 rounded-xl border border-slate-200 transition-colors">
                     <span class="text-sm font-medium text-slate-700">Телефон</span>
-                    <span id="curator-phone-val" class="text-xs font-semibold text-[#186372]">---</span>
+                    <span id="curator-phone-val" class="text-xs font-semibold text-[#2b6144]">---</span>
                 </a>
-                <a id="curator-max-btn" href="#" target="_blank" class="flex items-center justify-between bg-[#186372] hover:bg-[#114954] text-white p-4 rounded-xl transition-colors">
+                <a id="curator-max-btn" href="#" target="_blank" class="flex items-center justify-between bg-[#434c6f] hover:bg-[#4c567d] text-white p-4 rounded-xl transition-all shadow-md shadow-[#434c6f]/15">
                     <span class="text-sm font-medium">Написать в MAX</span>
                     <span class="text-xs font-semibold opacity-90">Начать чат</span>
                 </a>
@@ -333,67 +391,60 @@
         </div>
     </div>
 
-    <!-- ================= JAVASCRIPT И ЛОКАЛЬНЫЕ НАСТРОЙКИ ================= -->
+    <!-- ================= JAVASCRIPT И НАСТРОЙКИ ССЫЛОК ================= -->
     <script>
-        // ===================================================================
-        // 📁 УКАЖИТЕ СВОИ ПУТИ К ЛОКАЛЬНЫМ ФАЙЛАМ И ВНЕШНИЕ ССЫЛКИ ЗДЕСЬ
-        // ===================================================================
         const SITE_DATA = {
-            // --- Локальные видео (п. 1, 6, 8) ---
-            rulesVideo: "Rules.mp4",        // 1. Анимационный ролик
-            seminarVideo: "Seminar.mp4",    // 6. Запись семинара
-            tournamentVideoInst: "video_inst.mp4",// 8. Видео-инструкция
+            rulesVideo: "Rules.mp4",
+            seminarVideo: "Seminar.mp4",
+            tournamentVideoInst: "Tur.mp4",
 
-            // --- Локальные документы для просмотра (PDF) (п. 2, 3) ---
-            methodologyOpen: "Metod.pdf",     // 2. Методическое пособие (ОТКРЫТИЕ в PDF)
-            methodologyDownload: "",                 // 2. Методическое пособие (СКАЧИВАНИЕ. Пусто = скачается методика PDF)
+            methodologyOpen: "Metod.pdf",
+            methodologyDownload: "",
 
-            rulesOpen: "Example.pdf",             // 3. Положение школьной лиги (ОТКРЫТИЕ в PDF)
-            rulesDownload: "Example.docx",        // 3. Положение школьной лиги (СКАЧИВАНИЕ в Word)
+            rulesOpen: "Example.pdf",
+            rulesDownload: "Example.docx",
 
-            // --- Внешние сервисы и чаты (п. 4, 5, 7, 11) ---
-            lkPortal: "https://lk.plrl.ru/login",      // 4. Личный кабинет ЛЛ
-            trainingCourse: "https://plrl.ru/training", // 5. Курсы повышения квалификации
-            inventoryForm: "https://forms.yandex.ru/u/649176e05056901844b2f211/?iframe=1", // 7. Яндекс.Форма заказа инвентаря
-            chatGroup: "https://t.me/plrl_group", // 11. Ссылка на общую группу МАКС
+            lkPortal: "https://lk.plrl.ru/",
+            trainingCourse: "https://plrl.ru/training",
+            inventoryForm: "https://forms.yandex.ru/u/649176e05056901844b2f211/?iframe=1",
+            chatGroup: "https://max.ru/join/Ul58NEODrK9kx6T_5dVvbB_isAw8FIvUM22WbOt16oA",
 
-            // --- Контакты (п. 12, 13) ---
-            curatorPhone: "+79261234567",         // 12. Телефон куратора Александра Чебана
-            curatorMax: "https://t.me/cheban",     // 12. Ссылка на чат куратора в МАКС
-            supportEmail: "lapta@plrl.ru"         // 9, 13. Адрес почты для заявок и техподдержки
+            curatorPhone: "+7 950 790 39 93",
+            curatorMax: "https://web.max.ru/145570136",
+            supportEmail: "lapta@plrl.ru"
         };
 
-        // Сюда автоматически подставится нужный файл при клике по карточке документа
         let activeDownloadUrl = "";
 
-        // Инициализация внешних ссылок и контактов при загрузке страницы
         document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("lk-link-card").href = SITE_DATA.lkPortal;
             document.getElementById("training-link").href = SITE_DATA.trainingCourse;
             document.getElementById("chat-link").href = SITE_DATA.chatGroup;
             
-            // Настройка писем
-            document.getElementById("rights-email").href = `mailto:${SITE_DATA.supportEmail}?subject=Запрос прав на ведение турнира Школьной лиги в системе ЛЛ&body=Здравствуйте!%0A%0AПрошу предоставить права организатора на ведение турнира школьной лиги в системе ЛЛ.%0A%0AМои данные:%0A- ФИО:%0A- Название школы / организации:%0A- Город/Регион:%0A- Контактный телефон:%0A- Логин (Email) регистрации в lk.plrl.ru:`;
-            document.getElementById("support-email").href = `mailto:${SITE_DATA.supportEmail}?subject=Техническая поддержка системы ЛЛ`;
+            document.getElementById("rights-email").href = `mailto:${SITE_DATA.supportEmail}?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B2%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%D0%B0%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BB%D0%B8%D0%B3%D0%B8&body=%D0%A4%D0%98%D0%9E%3A%0A%D0%A0%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%20%D0%B8%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%3A%0A%D0%9E%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%3A%0A%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%3A%0A%D0%9...`;
+            document.getElementById("support-email").href = `mailto:${SITE_DATA.supportEmail}?subject=%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%C2%AB%D0%9Check%20%D0%BB%D0%B0%D0%BF%D1%82%D1%8B%C2%BB&body=%D0%A4%D0%98%D0%9E%3A%0A%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%3A%0A%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%3A%0A%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0%3A`;
             
-            // Настройка попапа куратора
-            document.getElementById("curator-phone-btn").href = `tel:${SITE_DATA.curatorPhone}`;
+            document.getElementById("curator-phone-btn").href = `tel:${SITE_DATA.curatorPhone.replace(/\s+/g, '')}`;
             document.getElementById("curator-phone-val").innerText = SITE_DATA.curatorPhone;
             document.getElementById("curator-max-btn").href = SITE_DATA.curatorMax;
         });
 
-        // 1. Функция воспроизведения локального видео (п. 1, 6, 8)
+        // Запуск видео с регулировкой изначального уровня громкости
         function playLocalVideo(fileKey) {
             const player = document.getElementById("localVideoPlayer");
             player.src = SITE_DATA[fileKey];
+            
+            // Настройка уровня звука
+            if (fileKey === 'rulesVideo') {
+                player.volume = 0.25; // Уменьшенный комфортный звук для Обучающего видео (25%)
+            } else {
+                player.volume = 0.50; // Для остальных видео — среднее значение (50%)
+            }
+            
             openModal("videoModal");
         }
 
-        // 2. Функция просмотра локального PDF документа (п. 2, 3)
         function viewLocalDoc(openKey, downloadKey, title) {
             document.getElementById("docModalTitle").innerText = title;
-            
-            // Если путь для скачивания (downloadKey) пустой — скачивается файл открытия (openKey)
             const openPath = SITE_DATA[openKey];
             const downloadPath = SITE_DATA[downloadKey];
             
@@ -404,36 +455,23 @@
             openModal("docModal");
         }
 
-        // 3. Обработчик нажатия на кнопку "Скачать" внутри формы просмотра документа
         function triggerModalDownload() {
             if (activeDownloadUrl) {
-                executeFileDownload(activeDownloadUrl);
+                const link = document.createElement("a");
+                link.href = activeDownloadUrl;
+                link.download = "";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             }
         }
 
-        // 4. Прямое скачивание файла из карточки (п. 10)
-        function downloadFileDirect(fileKey) {
-            executeFileDownload(SITE_DATA[fileKey]);
-        }
-
-        // 5. Вспомогательная функция триггера скачивания в браузере
-        function executeFileDownload(filePath) {
-            const link = document.createElement("a");
-            link.href = filePath;
-            link.download = "";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        // 6. Функция открытия Яндекс.Формы (п. 7)
         function openYandexForm() {
             const iframe = document.getElementById("formIframe");
             iframe.src = SITE_DATA.inventoryForm;
             openModal("formModal");
         }
 
-        // Общие хелперы модальных окон
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.remove('hidden');
@@ -445,7 +483,6 @@
             modal.classList.add('hidden');
             modal.classList.remove('flex');
             
-            // Сбрасываем ресурсы при закрытии
             const video = modal.querySelector('video');
             if (video) {
                 video.pause();
@@ -460,22 +497,10 @@
             }
         }
 
-        // Закрытие по клику на темную область за пределами модального окна
+        // Стабильное закрытие окон при клике по фону
         window.onclick = function(event) {
-            if (event.target.classList.contains('bg-black/85') || event.target.classList.contains('bg-black/60')) {
-                event.target.classList.add('hidden');
-                event.target.classList.remove('flex');
-                
-                const video = event.target.querySelector('video');
-                if (video) {
-                    video.pause();
-                    video.src = '';
-                }
-                const iframe = event.target.querySelector('iframe');
-                if (iframe) {
-                    iframe.src = '';
-                }
-                activeDownloadUrl = "";
+            if (event.target.id === 'videoModal' || event.target.id === 'docModal' || event.target.id === 'formModal' || event.target.id === 'curatorModal') {
+                closeModal(event.target.id);
             }
         }
     </script>
