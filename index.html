@@ -81,31 +81,26 @@
         
         <div class="max-w-6xl mx-auto px-6 relative z-10 flex flex-col items-center">
             
-            <!-- Интегрированный воссозданный логотип ПЛРЛ -->
-            <div class="flex items-center gap-5 mb-8 text-left group">
-                <!-- Векторная эмблема ПЛРЛ -->
-                <svg class="w-16 h-16 md:w-20 md:h-20 text-[#FBF7EE] transition-colors duration-300 group-hover:text-[#C34242]" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="60" cy="60" r="55" fill="currentColor" />
-                    <g stroke="#0F2F23" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                        <g transform="rotate(0, 60, 60)">
-                            <path d="M 38 28 L 60 48 L 82 28" />
-                            <path d="M 24 15 L 60 48 L 96 15" />
-                        </g>
-                        <g transform="rotate(120, 60, 60)">
-                            <path d="M 38 28 L 60 48 L 82 28" />
-                            <path d="M 24 15 L 60 48 L 96 15" />
-                        </g>
-                        <g transform="rotate(240, 60, 60)">
-                            <path d="M 38 28 L 60 48 L 82 28" />
-                            <path d="M 24 15 L 60 48 L 96 15" />
-                        </g>
-                    </g>
+            <!-- Очищенный логотип ПЛРЛ и текстовая подпись в одну горизонтальную линию -->
+            <div class="flex flex-col md:flex-row items-center gap-6 mb-8 text-center md:text-left group select-none">
+                <!-- Очищенная векторная эмблема ПЛРЛ с акцентным красным крылом -->
+                <svg class="w-20 h-20 md:w-24 md:h-24 shrink-0 transition-transform duration-500 hover:rotate-12" viewBox="50 0 135 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Верхнее крыло (Айвори) -->
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M120.835 6.52918C120.637 6.27369 120.358 6.17717 119.998 6.2453C119.998 10.2196 119.998 14.1939 119.998 18.1682C99.6657 17.4897 83.483 25.39 71.4495 41.8719C69.4398 41.9344 67.4401 42.0763 65.4507 42.2977C65.3112 42.204 65.1717 42.1075 65.0322 42.0139C76.5504 23.5647 93.1053 13.9128 114.696 13.0584C114.696 8.70652 114.696 4.35184 114.696 0C132.197 2.01553 146.195 10.1543 156.688 24.4135C158.144 26.6674 159.492 28.9839 160.733 31.3685C155.396 42.9506 147.119 51.6543 135.901 57.4852C129.178 60.7583 122.11 62.7937 114.696 63.5885C114.696 58.4787 114.696 53.3689 114.696 48.2592C116.463 48.2592 118.231 48.2592 119.998 48.2592C119.905 51.2938 119.998 54.3199 120.277 57.3432C135.487 53.8232 147.019 45.2614 154.874 31.6523C147.08 18.3612 135.734 9.98681 120.835 6.52918Z" fill="#FBF7EE"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M123.069 9.92773C135.22 13.5358 144.706 20.7747 151.528 31.6444C144.855 42.5452 135.462 49.8778 123.348 53.6449C123.069 49.012 122.976 44.3763 123.069 39.7349C124.836 39.7349 126.603 39.7349 128.37 39.7349C128.278 41.7305 128.371 43.7177 128.649 45.6963C135.28 42.4033 140.767 37.7193 145.111 31.6444C140.666 25.7482 135.178 21.1579 128.649 17.8763C128.37 20.8996 128.277 23.9257 128.37 26.9604C122.698 26.7219 117.025 26.6737 111.35 26.8184C99.2683 28.4223 89.1307 33.7678 80.9378 42.8575C80.6588 42.9512 80.3798 43.0477 80.1008 43.1414C78.2244 42.9001 76.3645 42.5708 74.5205 42.1478C87.0964 26.7191 103.279 19.7641 123.069 21.2828C123.069 17.4987 123.069 13.7118 123.069 9.92773Z" fill="#FBF7EE"></path>
+                    <!-- Правое крыло (Акцентный Красный) -->
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M165.478 36.0454C170.706 44.9705 173.31 54.6706 173.29 65.1428C173.118 75.6037 170.606 85.4458 165.757 94.6661C169.291 97.0336 172.918 99.2564 176.638 101.337C164.168 118.182 147.52 126.37 126.695 125.893C121.316 117.899 118.201 109.05 117.348 99.3501C116.478 88.8892 118.199 78.9052 122.51 69.401C124.035 69.9886 125.523 70.7437 126.974 71.672C129.9 73.4718 132.784 75.317 135.623 77.2076C134.81 78.769 133.927 80.282 132.973 81.7497C130.432 80.1514 127.875 78.6866 125.3 77.3496C120.567 92.2929 121.962 106.629 129.485 120.357C145.027 120.34 158.048 114.52 168.547 102.899C165.097 100.957 161.749 98.8731 158.502 96.6532C169.226 79.1266 170.621 60.8648 162.687 41.8649C163.877 40.0594 164.808 38.1177 165.478 36.0454Z" fill="#C34242"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M160.734 44.5654C167.04 60.6499 166.157 76.3569 158.084 91.6891C156.793 93.6989 155.538 95.7343 154.317 97.7925C157.572 99.7313 160.827 101.673 164.082 103.612C154.872 112.506 143.898 117.096 131.159 117.38C126.614 108.835 124.708 99.7029 125.439 89.9858C125.681 87.0931 126.192 84.2543 126.974 81.4695C130.926 83.8115 134.832 86.2244 138.692 88.7084C137.863 90.2583 136.933 91.7232 135.902 93.1085C134.252 92.1972 132.624 91.2519 131.019 90.2697C130.582 92.518 130.489 94.789 130.74 97.0828C131.248 102.173 132.41 107.095 134.228 111.844C141.713 111.214 148.503 108.708 154.596 104.322C152.25 102.789 149.832 101.369 147.342 100.063C147.196 99.9045 147.103 99.7143 147.063 99.4957C150.073 94.6499 152.91 89.6821 155.572 84.5922C160.366 73.1945 160.878 61.6038 157.107 49.8172C157.154 49.5815 157.2 49.3431 157.247 49.1075C158.575 47.7108 159.738 46.1949 160.734 44.5654Z" fill="#C34242"></path>
+                    <!-- Левое крыло (Айвори) -->
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M63.6373 47.684C84.8143 46.8182 101.741 54.957 114.418 72.0975C110.092 74.7233 105.721 77.2782 101.304 79.7622C100.273 78.3769 99.3433 76.912 98.5138 75.3621C101.118 73.7525 103.722 72.1457 106.326 70.5362C95.7081 58.653 82.5016 52.9272 66.7064 53.3616C59.5548 67.0984 58.2992 81.386 62.9398 96.2271C66.2662 94.132 69.6606 92.1449 73.1237 90.2656C82.7577 108.525 97.7315 118.886 118.045 121.35C118.963 123.079 119.986 124.734 121.114 126.318C111.064 126.625 101.671 124.212 92.9336 119.079C83.9056 113.774 76.6047 106.628 71.0311 97.6465C67.5382 99.8011 64.0039 101.885 60.4287 103.892C59.2339 101.862 58.3037 99.6847 57.6385 97.3626C52.4746 79.87 54.4743 63.3115 63.6373 47.684Z" fill="#FBF7EE"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M68.6621 55.9209C81.2796 56.3581 92.2074 60.9001 101.446 69.547C101.618 69.8167 101.572 70.0523 101.307 70.2567C97.5371 72.3915 93.7704 74.5205 90.0066 76.6439C89.0911 75.2104 88.2078 73.7427 87.3559 72.2438C88.9564 71.0913 90.6304 70.0495 92.3782 69.1212C86.1495 64.6899 79.2671 62.2769 71.7313 61.8823C68.9049 68.7067 67.882 75.8037 68.6621 83.1731C71.1732 81.6601 73.6844 80.1442 76.1955 78.6311C78.7981 83.5507 81.5416 88.3766 84.4263 93.1088C91.9677 103.411 101.966 109.892 114.42 112.554C115.1 114.394 115.751 116.239 116.373 118.09C100.235 115.68 87.6325 107.638 78.5671 93.9605C77.1461 91.3516 75.6578 88.7967 74.1029 86.2958C71.0145 88.1268 67.8988 89.9266 64.756 91.6894C61.4237 79.2783 62.7259 67.3555 68.6621 55.9209Z" fill="#FBF7EE"></path>
                 </svg>
-                <!-- Текстовая часть бренда -->
+
+                <!-- Новая аккуратная подпись системным шрифтом Montserrat -->
                 <div class="flex flex-col justify-center">
                     <span class="text-4xl md:text-5xl font-black tracking-tight leading-none text-[#FBF7EE] uppercase font-sans">ПЛРЛ</span>
-                    <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.12em] text-[#ECEBE8] mt-1.5 leading-none">Профессиональная</span>
-                    <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.12em] text-[#ECEBE8] mt-1 leading-none">Лига Русской Лапты</span>
+                    <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] text-[#ECEBE8] mt-2 leading-none">Профессиональная</span>
+                    <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] text-[#ECEBE8] mt-1 leading-none">Лига Русской Лапты</span>
                 </div>
             </div>
 
@@ -165,13 +160,13 @@
             <a href="https://www.laptist.ru/LigaLapty/ru_RU/" target="_blank" class="group relative p-8 lg:col-span-1 tile-linen-gray flex flex-col justify-between card-transition rounded-none">
                 <div class="flex justify-between items-start w-full select-none mb-6">
                     <span class="text-4xl font-black tracking-tighter text-[#0F2F23]/10 font-mono">02</span>
-                    <svg class="w-7 h-7 text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    <svg class="w-7 h-7 text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
                     <span class="text-[9px] uppercase font-bold tracking-widest text-[#FBF7EE] bg-[#C34242] group-hover:bg-[#0F2F23] transition-colors px-2 py-0.5 rounded-none">Платформа</span>
                     <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors uppercase">Система «Лига лапты»</h3>
                 </div>
-                <div class="text-xs font-bold text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
+                <div class="text-xs font-bold text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
                     <span class="uppercase tracking-wider">Перейти на портал</span>
                     <span class="transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
                 </div>
@@ -198,13 +193,13 @@
             <a href="https://lk.plrl.ru/" target="_blank" class="group relative p-8 lg:col-span-1 tile-linen-gray flex flex-col justify-between card-transition rounded-none">
                 <div class="flex justify-between items-start w-full select-none mb-6">
                     <span class="text-4xl font-black tracking-tighter text-[#0F2F23]/10 font-mono">04</span>
-                    <svg class="w-7 h-7 text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" /></svg>
+                    <svg class="w-7 h-7 text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" /></svg>
                 </div>
                 <div>
                     <span class="text-[9px] uppercase font-bold tracking-widest text-[#FBF7EE] bg-[#C34242] group-hover:bg-[#0F2F23] transition-colors px-2 py-0.5 rounded-none">Управление</span>
-                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors uppercase">Личный кабинет</h3>
+                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors uppercase">Личный кабинет</h3>
                 </div>
-                <div class="text-xs font-bold text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
+                <div class="text-xs font-bold text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
                     <span class="uppercase tracking-wider">Войти в кабинет</span>
                     <span class="transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
                 </div>
@@ -250,13 +245,13 @@
             <div onclick="playLocalVideo('tournamentVideoInst')" role="button" tabindex="0" class="group relative p-8 lg:col-span-1 tile-linen-gray flex flex-col justify-between card-transition click-feedback cursor-pointer rounded-none">
                 <div class="flex justify-between items-start w-full select-none mb-6">
                     <span class="text-4xl font-black tracking-tighter text-[#0F2F23]/10 font-mono">07</span>
-                    <svg class="w-7 h-7 text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    <svg class="w-7 h-7 text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
                     <span class="text-[9px] uppercase font-bold tracking-widest text-[#FBF7EE] bg-[#C34242] group-hover:bg-[#0F2F23] transition-colors px-2 py-0.5 rounded-none">Инструкция</span>
-                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors uppercase">Как завести турнир</h3>
+                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors uppercase">Как завести турнир</h3>
                 </div>
-                <div class="text-xs font-bold text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
+                <div class="text-xs font-bold text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
                     <span class="uppercase tracking-wider">Смотреть</span>
                     <span class="transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
                 </div>
@@ -283,13 +278,13 @@
             <a id="rights-email" href="#" class="group relative p-8 lg:col-span-1 tile-linen-gray flex flex-col justify-between card-transition rounded-none">
                 <div class="flex justify-between items-start w-full select-none mb-6">
                     <span class="text-4xl font-black tracking-tighter text-[#0F2F23]/10 font-mono">09</span>
-                    <svg class="w-7 h-7 text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                    <svg class="w-7 h-7 text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                 </div>
                 <div>
                     <span class="text-[9px] uppercase font-bold tracking-widest text-[#FBF7EE] bg-[#C34242] group-hover:bg-[#0F2F23] transition-colors px-2 py-0.5 rounded-none">Доступ</span>
-                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors uppercase">Запросить права</h3>
+                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors uppercase">Запросить права</h3>
                 </div>
-                <div class="text-xs font-bold text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
+                <div class="text-xs font-bold text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
                     <span class="uppercase tracking-wider">Форма заявки</span>
                     <span class="transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
                 </div>
@@ -321,7 +316,7 @@
                 </div>
                 <div>
                     <span class="text-[9px] uppercase font-bold tracking-widest text-[#FBF7EE] bg-[#C34242] group-hover:bg-[#0F2F23] transition-colors px-2 py-0.5 rounded-none">Регламент</span>
-                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F2F23] group-hover:text-[#FBF7EE] transition-colors uppercase">Пример Положения</h3>
+                    <h3 class="text-xl font-bold mt-4 mb-1 tracking-tight text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors uppercase">Пример Положения</h3>
                 </div>
                 <div class="text-xs font-bold text-[#0F0F0F] group-hover:text-[#FBF7EE] transition-colors flex items-center gap-1.5 mt-6 duration-300">
                     <span class="uppercase tracking-wider">Открыть регламент</span>
@@ -369,23 +364,15 @@
     <!-- Подвал в глубоком изумрудном цвете с маленьким логотипом -->
     <footer class="bg-[#0F2F23] text-[#ECEBE8]/50 py-16 text-center text-xs mt-24 border-t border-white/5 uppercase tracking-widest flex flex-col items-center gap-6">
         <!-- Мини-логотип в подвале -->
-        <div class="flex items-center gap-3 text-left opacity-50">
-            <svg class="w-8 h-8 text-[#FBF7EE]" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="60" cy="60" r="55" fill="currentColor" />
-                <g stroke="#0F2F23" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                    <g transform="rotate(0, 60, 60)">
-                        <path d="M 38 28 L 60 48 L 82 28" />
-                        <path d="M 24 15 L 60 48 L 96 15" />
-                    </g>
-                    <g transform="rotate(120, 60, 60)">
-                        <path d="M 38 28 L 60 48 L 82 28" />
-                        <path d="M 24 15 L 60 48 L 96 15" />
-                    </g>
-                    <g transform="rotate(240, 60, 60)">
-                        <path d="M 38 28 L 60 48 L 82 28" />
-                        <path d="M 24 15 L 60 48 L 96 15" />
-                    </g>
-                </g>
+        <div class="flex items-center gap-4 text-left opacity-50">
+            <svg class="w-10 h-10 select-none shrink-0" viewBox="50 0 135 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M120.835 6.52918C120.637 6.27369 120.358 6.17717 119.998 6.2453C119.998 10.2196 119.998 14.1939 119.998 18.1682C99.6657 17.4897 83.483 25.39 71.4495 41.8719C69.4398 41.9344 67.4401 42.0763 65.4507 42.2977C65.3112 42.204 65.1717 42.1075 65.0322 42.0139C76.5504 23.5647 93.1053 13.9128 114.696 13.0584C114.696 8.70652 114.696 4.35184 114.696 0C132.197 2.01553 146.195 10.1543 156.688 24.4135C158.144 26.6674 159.492 28.9839 160.733 31.3685C155.396 42.9506 147.119 51.6543 135.901 57.4852C129.178 60.7583 122.11 62.7937 114.696 63.5885C114.696 58.4787 114.696 53.3689 114.696 48.2592C116.463 48.2592 118.231 48.2592 119.998 48.2592C119.905 51.2938 119.998 54.3199 120.277 57.3432C135.487 53.8232 147.019 45.2614 154.874 31.6523C147.08 18.3612 135.734 9.98681 120.835 6.52918Z" fill="#FBF7EE"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M123.069 9.92773C135.22 13.5358 144.706 20.7747 151.528 31.6444C144.855 42.5452 135.462 49.8778 123.348 53.6449C123.069 49.012 122.976 44.3763 123.069 39.7349C124.836 39.7349 126.603 39.7349 128.37 39.7349C128.278 41.7305 128.371 43.7177 128.649 45.6963C135.28 42.4033 140.767 37.7193 145.111 31.6444C140.666 25.7482 135.178 21.1579 128.649 17.8763C128.37 20.8996 128.277 23.9257 128.37 26.9604C122.698 26.7219 117.025 26.6737 111.35 26.8184C99.2683 28.4223 89.1307 33.7678 80.9378 42.8575C80.6588 42.9512 80.3798 43.0477 80.1008 43.1414C78.2244 42.9001 76.3645 42.5708 74.5205 42.1478C87.0964 26.7191 103.279 19.7641 123.069 21.2828C123.069 17.4987 123.069 13.7118 123.069 9.92773Z" fill="#FBF7EE"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M165.478 36.0454C170.706 44.9705 173.31 54.6706 173.29 65.1428C173.118 75.6037 170.606 85.4458 165.757 94.6661C169.291 97.0336 172.918 99.2564 176.638 101.337C164.168 118.182 147.52 126.37 126.695 125.893C121.316 117.899 118.201 109.05 117.348 99.3501C116.478 88.8892 118.199 78.9052 122.51 69.401C124.035 69.9886 125.523 70.7437 126.974 71.672C129.9 73.4718 132.784 75.317 135.623 77.2076C134.81 78.769 133.927 80.282 132.973 81.7497C130.432 80.1514 127.875 78.6866 125.3 77.3496C120.567 92.2929 121.962 106.629 129.485 120.357C145.027 120.34 158.048 114.52 168.547 102.899C165.097 100.957 161.749 98.8731 158.502 96.6532C169.226 79.1266 170.621 60.8648 162.687 41.8649C163.877 40.0594 164.808 38.1177 165.478 36.0454Z" fill="#C34242"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M160.734 44.5654C167.04 60.6499 166.157 76.3569 158.084 91.6891C156.793 93.6989 155.538 95.7343 154.317 97.7925C157.572 99.7313 160.827 101.673 164.082 103.612C154.872 112.506 143.898 117.096 131.159 117.38C126.614 108.835 124.708 99.7029 125.439 89.9858C125.681 87.0931 126.192 84.2543 126.974 81.4695C130.926 83.8115 134.832 86.2244 138.692 88.7084C137.863 90.2583 136.933 91.7232 135.902 93.1085C134.252 92.1972 132.624 91.2519 131.019 90.2697C130.582 92.518 130.489 94.789 130.74 97.0828C131.248 102.173 132.41 107.095 134.228 111.844C141.713 111.214 148.503 108.708 154.596 104.322C152.25 102.789 149.832 101.369 147.342 100.063C147.196 99.9045 147.103 99.7143 147.063 99.4957C150.073 94.6499 152.91 89.6821 155.572 84.5922C160.366 73.1945 160.878 61.6038 157.107 49.8172C157.154 49.5815 157.2 49.3431 157.247 49.1075C158.575 47.7108 159.738 46.1949 160.734 44.5654Z" fill="#C34242"></path>
+                <!-- Левое крыло (Айвори) -->
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M63.6373 47.684C84.8143 46.8182 101.741 54.957 114.418 72.0975C110.092 74.7233 105.721 77.2782 101.304 79.7622C100.273 78.3769 99.3433 76.912 98.5138 75.3621C101.118 73.7525 103.722 72.1457 106.326 70.5362C95.7081 58.653 82.5016 52.9272 66.7064 53.3616C59.5548 67.0984 58.2992 81.386 62.9398 96.2271C66.2662 94.132 69.6606 92.1449 73.1237 90.2656C82.7577 108.525 97.7315 118.886 118.045 121.35C118.963 123.079 119.986 124.734 121.114 126.318C111.064 126.625 101.671 124.212 92.9336 119.079C83.9056 113.774 76.6047 106.628 71.0311 97.6465C67.5382 99.8011 64.0039 101.885 60.4287 103.892C59.2339 101.862 58.3037 99.6847 57.6385 97.3626C52.4746 79.87 54.4743 63.3115 63.6373 47.684Z" fill="#FBF7EE"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M68.6621 55.9209C81.2796 56.3581 92.2074 60.9001 101.446 69.547C101.618 69.8167 101.572 70.0523 101.307 70.2567C97.5371 72.3915 93.7704 74.5205 90.0066 76.6439C89.0911 75.2104 88.2078 73.7427 87.3559 72.2438C88.9564 71.0913 90.6304 70.0495 92.3782 69.1212C86.1495 64.6899 79.2671 62.2769 71.7313 61.8823C68.9049 68.7067 67.882 75.8037 68.6621 83.1731C71.1732 81.6601 73.6844 80.1442 76.1955 78.6311C78.7981 83.5507 81.5416 88.3766 84.4263 93.1088C91.9677 103.411 101.966 109.892 114.42 112.554C115.1 114.394 115.751 116.239 116.373 118.09C100.235 115.68 87.6325 107.638 78.5671 93.9605C77.1461 91.3516 75.6578 88.7967 74.1029 86.2958C71.0145 88.1268 67.8988 89.9266 64.756 91.6894C61.4237 79.2783 62.7259 67.3555 68.6621 55.9209Z" fill="#FBF7EE"></path>
             </svg>
             <div class="flex flex-col">
                 <span class="text-sm font-black tracking-tight leading-none text-[#FBF7EE]">ПЛРЛ</span>
